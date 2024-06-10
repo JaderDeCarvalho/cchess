@@ -4,22 +4,12 @@
 #include <ctype.h>
 #include <stdbool.h>
 
-struct Piece
-{
-	char name[15];
-	char playerName[100];
-};
-
-struct Player
-{
-	char name[100];
-	struct Piece capturedPieces[16];
-	int capturedPiecesCount;
-};
+#include "../include/piece.h"
+#include "../include/player.h"
 
 struct Piece board[8][8];
-struct Player player1;
-struct Player player2;
+struct Player player1, player2;
+
 bool gameEnded = false;
 bool isPlayerOneTurn = true;
 
@@ -33,12 +23,19 @@ void makeMove(char pieceToMoveCoordinate[2], char destinationCoordinate[2]);
 
 int main()
 {
+	char playerName[100];
+
 	system("cls");
+
 	printf("\n");
 	printf("Insert player 1 name: ");
-	scanf("%s", &player1.name);
+	scanf("%s", &playerName);
+	initPlayer(&player1, playerName);
+
 	printf("Insert player 2 name: ");
-	scanf("%s", &player2.name);
+	scanf("%s", &playerName);
+	initPlayer(&player2, playerName);
+
 	system("cls");
 	printf("\n");
 
