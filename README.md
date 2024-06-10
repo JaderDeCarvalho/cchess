@@ -7,5 +7,5 @@ Simple chess game made in C.
 1. Install gcc compiler;
 2. Run this command in the project folder:
 	```powershell
-	gcc -o .\cchess.exe .\src\main.c .\src\piece.c .\src\player.c 
+	gcc -o .\cchess.exe .\src\main.c .\src\piece.c .\src\player.c .\src\board.c
 	```
