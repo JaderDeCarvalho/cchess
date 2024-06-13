@@ -1,5 +1,8 @@
 .vscode/*
 
+src/obj/*
+!src/obj/blank
+
 # Local History for Visual Studio Code
 .history/
 
